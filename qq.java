@@ -1,3 +1,4 @@
+  
 import java.util.*;
 import javax.swing.*;
 import java.awt.*;
@@ -5,46 +6,41 @@ import java.awt.event.*;
 
 class qq extends Frame{
 	public qq(){
+		//MAIN FRAME 
+		JFrame fc=new JFrame("JAVA PROJECT");
+		Panel p= new Panel();
+		p.setBounds(1080,1920,400,400);
+		fc.add(p);
+		fc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		fc.setLayout (new CardLayout());  
+		fc.setVisible(true);
+		p.setBackground(Color.yellow);
+		JButton btn1=new JButton("ADDITON PROGRAM");
+		JButton btn2=new JButton("MERGE-SORT");
+		JButton btn3=new JButton("STUDENT PROGRAM");
+		JButton btn4=new JButton("QUICK-SORT");
+		JButton btn5=new JButton("STACK PROGRAM");
+		p.add(btn1);
+		p.add(btn2);
+		p.add(btn3);
+		p.add(btn4);
+		p.add(btn5); 
+	    fc.setSize(300,400);
+		
+		//SUB-FRAME FOR ALL PROGRAMS
+		//PROGRAM-1
 
-	//MAIN FRAME 
-	JFrame fc=new JFrame("JAVA PROJECT");
-	Panel p= new Panel();
-	p.setBounds(1080,1920,400,400);
-	fc.add(p);
-	fc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	fc.setLayout (new CardLayout());  
-	fc.setVisible(true);
-	p.setBackground(Color.yellow);
-	JButton btn1=new JButton("ADDITON PROGRAM");
-	JButton btn2=new JButton("MERGE-SORT");
-	JButton btn3=new JButton("STUDENT PROGRAM");
-	JButton btn4=new JButton("QUICK-SORT");
-	JButton btn5=new JButton("STACK PROGRAM");
-	p.add(btn1);
-	p.add(btn2);
-	p.add(btn3);
-	p.add(btn4);
-	p.add(btn5); 
-    fc.setSize(300,400);
-
-
-
-	
-	//SUB-FRAME FOR ALL PROGRAMS
-	//PROGRAM-1
-
-	JFrame f1=new JFrame("STUDENT RECORD");
-	f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	f1.setLayout(new FlowLayout());
-	f1.setSize(1000,1600);
-	f1.setLayout(new FlowLayout());
-btn1.addActionListener(new ActionListener(){
-    public void actionPerformed(ActionEvent e){
-		f1.setVisible(true);
-		fc.setVisible(false);
-		f1 f=new f1(f1);
-}});
-
+		JFrame f1=new JFrame("STUDENT RECORD");
+		f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f1.setLayout(new FlowLayout());
+		f1.setSize(1000,1600);
+		f1.setLayout(new FlowLayout());
+	btn1.addActionListener(new ActionListener(){
+	    public void actionPerformed(ActionEvent e){
+			f1.setVisible(true);
+			fc.setVisible(false);
+			f1 f=new f1(f1);
+	}});
 
 
 	//PROGRAM-2
@@ -58,7 +54,7 @@ btn1.addActionListener(new ActionListener(){
     		f2.setVisible(true);
     		fc.setLayout (new FlowLayout()); 
     		f2 f=new f2(f2);
-}});	
+	}});	
 	//PROGRAM-3
 	JFrame f3=new JFrame("STUDENT RECORD");
 	f3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,7 +66,7 @@ btn1.addActionListener(new ActionListener(){
     	public void actionPerformed(ActionEvent e){
         	f3.setVisible(true);
         	f3 f=new f3(f3);
-}});
+	}});
 
 	//PROGRAM-4
 	
@@ -83,7 +79,7 @@ btn1.addActionListener(new ActionListener(){
     	public void actionPerformed(ActionEvent e){	
         	f4.setVisible(true);
         	f4 f=new f4(f4);
-}});
+	}});
 	
 
 	//PROGRAM-5
@@ -93,11 +89,11 @@ btn1.addActionListener(new ActionListener(){
 	f5.setLayout(new GridLayout());
 	f5.setSize(1000,1600);
 	f5.setLayout(new FlowLayout());
-btn5.addActionListener(new ActionListener(){
+	btn5.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent e){
         f5.setVisible(true);
         f5 f=new f5(f5);
-}});
+	}});
 }
 
 
@@ -107,7 +103,7 @@ public static void main(String[] args) {
 }
 
 
- class f1{
+class f1{
  	JTextField t1,t2,t3;
  	JButton sum;
  	JLabel res;
@@ -128,20 +124,17 @@ public static void main(String[] args) {
 		t3.setBounds(50,150,200,30);
 		//f.add(t3);
 	}
- class sumActionListener implements ActionListener{
+class sumActionListener implements ActionListener{
 	public void actionPerformed(ActionEvent e){
-				System.out.println("kkkkkkk");
-	
-   				String s1=t1.getText();
-				String s2=t2.getText();
-				int c=0;
-				int a=Integer.parseInt(s1);
-				int b=Integer.parseInt(s2);
-				c=a+b;
-				System.out.println(c);
-				String result=String.valueOf(c);
-				res.setText(result);
-
+				String s1=t1.getText();
+			String s2=t2.getText();
+			int c=0;
+			int a=Integer.parseInt(s1);
+			int b=Integer.parseInt(s2);
+			c=a+b;
+			System.out.println(c);
+			String result=String.valueOf(c);
+			res.setText(result);
 		}
 	}		
 }
@@ -204,33 +197,27 @@ class f2{
 		p.add(button);
 	}
 
-	class mergesort implements ActionListener
-	{
-		public void actionPerformed(ActionEvent e)
-		{
-			int a[]=new int[100];
-			a[0]=Integer.parseInt(t1.getText());
-			a[1]=Integer.parseInt(t2.getText());
-			a[2]=Integer.parseInt(t3.getText());
-			a[3]=Integer.parseInt(t4.getText());
-			a[4]=Integer.parseInt(t5.getText());
-			mergesort(a, 5);
+class mergesort implements ActionListener{
+	public void actionPerformed(ActionEvent e){
+		int a[]=new int[100];
+		a[0]=Integer.parseInt(t1.getText());
+		a[1]=Integer.parseInt(t2.getText());
+		a[2]=Integer.parseInt(t3.getText());
+		a[3]=Integer.parseInt(t4.getText());
+		a[4]=Integer.parseInt(t5.getText());
+		mergesort(a, 5);
+		b.setText(" ");
+		result.setText(a[0] +"  "+a[1]+"  "+a[2]+"  "+a[3]+"  "+a[4]);
+	}
 
-			b.setText(" ");
-			result.setText(a[0] +"  "+a[1]+"  "+a[2]+"  "+a[3]+"  "+a[4]);
-
-		}
-
-public void mergesort(int a[],int y){
+	public void mergesort(int a[],int y){
         int b[]=new int[200];
         int c[]=new int [200];
         int k,w=0;
-	System.out.println("tttt");
-        if(y>1)
-        {
-                for(int i=0;i<(y/2);i++)
-                {
-                        b[i]=a[i];
+		System.out.println("tttt");
+        if(y>1){
+           	for(int i=0;i<(y/2);i++){
+                    b[i]=a[i];
                 }
         mergesort(b,y/2);
         k=y-(y/2);
@@ -239,10 +226,9 @@ public void mergesort(int a[],int y){
 
         mergesort(c,k);
         merge(a,b,c,y);
-        }
+    }
 }
-public void merge(int a[],int b[],int c[],int y)
-        {
+	public void merge(int a[],int b[],int c[],int y){
         int i=0,j=0,k=0;
         int z=y-(y/2);
         while(i<(y/2)&&j<z)
@@ -277,10 +263,10 @@ public void merge(int a[],int b[],int c[],int y)
 
 
 class f3{
-		String y;
-		JTextField t1,t2,t3,t4,n1;
-		JTextArea l1,l2,l3,l4,l5;
-		JButton print,n;
+	String y;
+	JTextField t1,t2,t3,t4,n1;
+	JTextArea l1,l2,l3,l4,l5;
+	JButton print,n;
 	f3(Frame f){
 		f.setLayout(new BorderLayout());
 		f.setVisible(true);
@@ -321,11 +307,10 @@ class f3{
 		y=n1.getText();
 		System.out.println(y);
 	
-}	
+	}	
 	class Student implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			String a[]=new String[100];
-			
 			a[0]=t1.getText();
 			a[1]=t2.getText();
 			a[2]=t3.getText();
@@ -335,9 +320,6 @@ class f3{
 			l3.append(a[2]+"\n");
 			l4.append(a[3]+"\n");
 			l5.setText("\n");
-
-		
-
 		}
 	}
 }
@@ -434,10 +416,10 @@ class f4{
                 for(int j=f;j<=r-1;j++){
                         if(A[i]<=pivot)
                         {
-                                i++;
-                                int temp=A[i];
-                                A[i]=A[j];
-                                A[j]=temp;
+                            i++;
+                            int temp=A[i];
+                            A[i]=A[j];
+                            A[j]=temp;
                         }
                 }
                 int temp=A[r];
@@ -470,11 +452,9 @@ class f5{
 	btnPush.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             push();
-
         }
 
         private void push() {
-
            String s=t1.getText();
            if(top==max){
            	System.exit(0);
@@ -483,7 +463,6 @@ class f5{
            	stack[++top]=s;
            	System.out.println(stack[top]);
            }
-
         }
     });
 
