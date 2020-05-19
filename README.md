@@ -7,3 +7,7 @@
 #program-5:stack operation.
 *QUICK SORT IS GIVING SOME EXCEPTION.
 *STACK PROGRAM FINAL DISPLAY IS NOT GETTING REFRESHED.
+
+#To run the program
+1. javac qq.java
+2. java qq
