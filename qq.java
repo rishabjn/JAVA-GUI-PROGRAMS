@@ -223,7 +223,7 @@ class mergesort implements ActionListener{
         k=y-(y/2);
         for(int i=(y/2);i<y;i++,w++)
         c[w]=a[i];
-
+	System.out.println("Print new Numbers");
         mergesort(c,k);
         merge(a,b,c,y);
     }
@@ -324,7 +324,7 @@ class f3{
 	}
 }
 
-//CLASS AND ALGORITHM FOR QUICK SORT
+//CLASS AND ALGORITHM FOR QUICK SORT TO SORT AN ARRAY OF NUMBERS
 
 class f4{
 	JTextField t1, t2, t3, t4, t5,b;
